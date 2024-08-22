@@ -8,13 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="main_form">
+    <form id="main_form">
         {% csrf_token %}
         {{ form.as_p }}
-        <p id="dis">0</p>
-    </div>
+        <button>Submit</button>
+    </form>
+    <p id="price">0</p>
+    <p id="dis">{{ dis }}</p>
     <script>
-        
+        document.addEventListener('DOMContentLoaded', () => {
+            let price = document.querySelector('#price');
+            let discount = document.querySelector('#dis');
+            const myform = document.querySelector('#main_form');
+            myform.addEventListener('submit', (event) => {
+                event.preventDefault();
+                discount.innerText = `${discount.innerHTML}`;
+            });
+        })
     </script>
 </body>
 </html>

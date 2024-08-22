@@ -21,4 +21,5 @@ from mysite import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', views.apply_discount),
+    path('page/<int:pk>', views.apply_discount),
 ]
